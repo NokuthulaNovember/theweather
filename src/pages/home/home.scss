@@ -1,3 +1,38 @@
 page-home {
-
+.home{
+    background-image:url('../../assets/imgs/pretty.png');
+    background-repeat :no-repeat;
+    background-size:1900px;
+}
+// .display{
+//     background-image:url('../../assets/imgs/n.png');
+//     background-color:transparent;
+//     background-repeat :no-repeat;
+   
+// }
+.p{
+    color:orange;
+    border-radius:100px;
+    
+  
+}
+.b{
+ color:rgb(223, 135, 21);   
+}
+.t{
+    background-color: rgb(248, 213, 149);
+    // background-image:url('../../assets/imgs/pretty.png');
+}
+.display{
+    background-color:transparent;
+}
+.main{
+    background-color:transparent;
+}
+.n{
+    color:rgb(248, 213, 149);
+}
+ion-icon{
+    color:rgb(223, 135, 21);
+}
 }

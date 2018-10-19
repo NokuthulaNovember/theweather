@@ -1,18 +1,54 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Weather vibes</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content class="home" padding>
+  
+  <ion-card>
+    <ion-card-content class="t" >
+   
+      <!-- <ion-item>
+        <ion-input type="text" placeholder="Search city"  class="n" [(ngModel)]='city'></ion-input>
+       
+      </ion-item> -->
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+      <ion-searchbar [(ngModel)]='city' (ionInput)="getWeather()"></ion-searchbar>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+      <!-- <button ion-button   class="p" color="light" icon-only (click)="getWeather()"><ion-icon name="search"></ion-icon></button> -->
+        
+      
+      <ion-item class ="main" >{{main}}</ion-item>
+
+
+         <ion-item class="display">
+            <ion-icon name="water" item-start></ion-icon>          <strong class="b">Humidity:</strong>{{humidity}}%
+           </ion-item>
+
+           <ion-item  class ="display">
+              <ion-icon name="thermometer" item-start></ion-icon>
+             <strong class="b">Temp:</strong>{{Temp}}&deg;
+             </ion-item>
+             <ion-item class ="display">
+                <ion-icon name="speedometer" item-start></ion-icon>
+                 <strong class="b">Description:</strong>{{description}}
+               </ion-item>
+           <ion-item class ="display">
+              <ion-icon name="trending-up" item-start></ion-icon>
+               <strong class="b">Wind:</strong>{{wind}}Km/h
+             </ion-item>
+
+
+           <ion-item class ="display">
+              <ion-icon name="calendar" item-start></ion-icon>
+               <strong class="b">Date:</strong>{{date * 1000 | date}}
+             </ion-item>
+
+            </ion-card-content>
+           </ion-card>
+
+
+
+
 </ion-content>

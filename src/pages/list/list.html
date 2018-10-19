@@ -1,23 +1,47 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>List</ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+        
+        <ion-title> Choose a city</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-grid>
+        <ion-row class="manage-content">
+  
+            <ion-item>
+                <ion-label color="primary" floating>select a city</ion-label>
+  
+                <ion-input [(ngModel)]="city"
+                           (keyup)="cityKeyPress($event)"
+                           name="city" type="text" autofocus></ion-input>
+            </ion-item>
+  
+            <button ion-button (click)="searchCityClick($event)"
+                    title="Find a city by southafrica name"
+                    class="city-btn"> Search City</button>
+        </ion-row>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
-</ion-content>
+  <ion-select>
+          <ion-option value="benoni">Benoni</ion-option>
+          <ion-option value="brakpan">Brakpan</ion-option>
+          <ion-option value="boksburg">Boksburg</ion-option>
+          <ion-option value="vandyk">Vandyk</ion-option>
+          <ion-option value="daveyton">Daveyton</ion-option>
+          
+        </ion-select>
+
+
+
+<!-- </ion-item>
+        <ion-row *ngFor="let city of cities; index as i;" class="city-row" (click)="selectCityClick($event)">
+            <ion-col col-1 class="city-id">
+                {{i+1}}
+            </ion-col>
+            <ion-col col-2 class="city-key">{{city.Key}}</ion-col>
+            <ion-col col-5 class="city-name">{{city.LocalizedName}}</ion-col>
+            <ion-col col-4 class="city-state">{{city.AdministrativeArea.LocalizedName}}</ion-col>
+        </ion-row>
+    </ion-grid> -->
+    </ion-grid>
+  </ion-content>
